@@ -14,37 +14,6 @@ color:#111;
 overflow-x:hidden;
 }
 
-/* HEADER */
-header{
-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-opacity:0;
-transform:translateY(20px);
-animation:fadeIn 1.2s ease forwards;
-}
-
-@keyframes fadeIn{
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
-
-header h1{
-font-size:52px;
-letter-spacing:4px;
-margin:0;
-}
-
-header p{
-color:#666;
-margin-top:10px;
-}
-
 /* NAV */
 nav{
 position:fixed;
@@ -64,11 +33,34 @@ text-decoration:none;
 color:#111;
 font-weight:600;
 font-size:14px;
-transition:0.3s;
 }
 
-nav a:hover{
-opacity:0.5;
+/* HEADER */
+header{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+opacity:0;
+transform:translateY(20px);
+animation:fadeIn 1.2s ease forwards;
+}
+
+@keyframes fadeIn{
+to{opacity:1; transform:translateY(0);}
+}
+
+header h1{
+font-size:52px;
+letter-spacing:4px;
+margin:0;
+}
+
+header p{
+color:#666;
+margin-top:10px;
 }
 
 /* SECTIONS */
@@ -122,6 +114,7 @@ display:none;
 justify-content:center;
 align-items:center;
 padding:20px;
+z-index:2000;
 }
 
 #popup-box{
@@ -138,117 +131,52 @@ margin-bottom:10px;
 border-radius:6px;
 }
 </style>
-
-/* HEADER */
-header{
-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-}
-
-header h1{
-font-size:48px;
-letter-spacing:3px;
-margin:0;
-}
-
-header p{
-color:#666;
-}
-
-/* SECTIONS */
-section{
-max-width:800px;
-margin:auto;
-padding:60px 20px;
-}
-
-/* GALLERY */
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:15px;
-}
-
-.artwork{
-background:#f2f2f2;
-padding:10px;
-cursor:pointer;
-}
-
-.artwork img{
-width:100%;
-height:220px;
-object-fit:cover;
-}
-
-.artwork p{
-margin:10px 0 0 0;
-}
-
-/* POPUP */
-#popup{
-position:fixed;
-inset:0;
-background:rgba(0,0,0,0.8);
-display:none;
-justify-content:center;
-align-items:center;
-padding:20px;
-}
-
-#popup-box{
-background:#fff;
-padding:20px;
-max-width:400px;
-text-align:center;
-}
-
-#popup-box img{
-width:100%;
-margin-bottom:10px;
-}
-</style>
 </head>
 
 <body>
+
+<nav>
+<a href="#about">About</a>
+<a href="#gallery">Works</a>
+<a href="#contact">Contact</a>
+</nav>
 
 <header>
 <h1>SASHA BRAHMAN</h1>
 <p>Artist based in New York</p>
 </header>
 
-<section>
+<section id="about">
 <h2>About</h2>
 <p>
-Hello, I'm Sasha, I'm an artist based in New York. I work with oil and acrylic painting. I translate emotions into visual art.
+I am an artist based in New York. I work with oil and acrylic painting and translate emotions into visual language.
 </p>
 </section>
 
-<section>
+<section id="gallery">
 <h2>Selected Works</h2>
 
 <div class="gallery">
 
-<div class="artwork" onclick="openPopup('art1.jpg','Fallen Angel','A fallen angel stands suspended between divinity and collapse. The deep blue background reflects emotional depth, silence, and isolation. This work explores inner conflict — when something sacred becomes human, fragile, and lost. The angel is both fall and transformation, where beauty still exists after breaking.')">
+<div class="artwork" onclick="openPopup('art1.jpg','Fallen Angel','16 × 20 inch, oil/acrylic on canvas
+
+<div class="artwork" onclick="openPopup('art1.jpg','Fallen Angel','16 × 20 inch. Fallen Angel explores the beauty that remains even after innocence is lost. Suspended between light and darkness, the figure carries both sorrow and strength — a reminder that even what has fallen once belonged to heaven.')">
 <img src="art1.jpg">
 <p>Fallen Angel</p>
 </div>
 
-<div class="artwork" onclick="openPopup('art2.jpg','Revelation','Inspired by Revelation 10, where a mighty angel descends from heaven wrapped in a cloud. “Then I saw another mighty angel coming down from heaven, wrapped in a cloud…” This work reflects divine message, mystery, and spiritual presence — something overwhelming and beyond full human understanding.')">
+<div class="artwork" onclick="openPopup('art2.jpg','Revelation','“And I saw another mighty angel come down from heaven, clothed with a cloud: and a rainbow was upon his head, and his face was as it were the sun, and his feet as pillars of fire.” — Revelation 10:1.')">
 <img src="art2.jpg">
 <p>Revelation</p>
 </div>
 
-<div class="artwork" onclick="openPopup('art3.jpg','DREAMS','DREAMS represents fragile memories of childhood imagination — dreams that dissolve as we grow older. The fairy becomes a symbol of broken hopes, forgotten wishes, and emotions we leave behind. This piece reflects the quiet grief of growing up, when fantasy still exists but no longer feels reachable.')">
+<div class="artwork" onclick="openPopup('art3.jpg','DREAMS','10 × 10 inch, This artwork symbolizes forgotten dreams and lost hopes. The crushed fairy represents everything we once believed in but left behind as we grew older. A quiet reminder that innocence does not disappear — it only becomes buried under time.
+.')">
 <img src="art3.jpg">
 <p>DREAMS</p>
 </div>
 
-<div class="artwork" onclick="openPopup('art4.jpg','Lucky Horse','A golden horse symbolizing luck, transformation, and direction. This work reflects the beginning of change — when life shifts and new paths quietly open. The golden tones represent prosperity and awakening, reminding us to trust movement forward even when the direction is unclear.')">
+<div class="artwork" onclick="openPopup('art4.jpg','Lucky Horse','6 × 6 inch, A small golden talisman of fortune. The horse on a radiant gold background symbolizes movement, strength, and unexpected luck. A piece meant to bring positive energy and success into any space.')">
 <img src="art4.jpg">
 <p>Lucky Horse</p>
 </div>
@@ -256,7 +184,7 @@ Hello, I'm Sasha, I'm an artist based in New York. I work with oil and acrylic p
 </div>
 </section>
 
-<section>
+<section id="contact">
 <h2>Contact</h2>
 <p>Email: alexamamoka@icloud.com</p>
 <p>Instagram: brahmansasha</p>
