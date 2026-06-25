@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sasha Brahman | Artist</title>
+<style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,sans-serif;background:#fafafa;color:#111}
+nav{position:fixed;top:0;width:100%;padding:14px;background:rgba(255,255,255,.9);backdrop-filter:blur(8px);display:flex;justify-content:center;gap:30px;border-bottom:1px solid #eee;z-index:10}
+nav a{text-decoration:none;color:#111;font-weight:bold}
+header{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:20px}
+header h1{font-size:56px;letter-spacing:4px;margin:0}header p{color:#666}
+.btn{padding:12px 28px;border:1px solid #111;text-decoration:none;color:#111;margin-top:20px;transition:.3s}.btn:hover{background:#111;color:#fff}
+section{max-width:1000px;margin:auto;padding:80px 20px;opacity:0;transform:translateY(30px);transition:.8s}
+.show{opacity:1;transform:none}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.artwork{background:#fff;border:1px solid #eee;box-shadow:0 8px 25px rgba(0,0,0,.05);cursor:pointer;transition:.3s}.artwork:hover{transform:translateY(-5px)}
+.artwork img{width:100%;height:320px;object-fit:cover}.artwork p{text-align:center;padding:12px}
+#popup{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);justify-content:center;align-items:center;padding:20px}
+#box{background:#fff;max-width:520px;padding:20px;border-radius:10px}#box img{width:100%}
+footer{text-align:center;padding:40px;color:#666}
+</style></head><body>
+<nav><a href="#about">About</a><a href="#works">Works</a><a href="#contact">Contact</a></nav>
+<header><h1>SASHA BRAHMAN</h1><p>Artist based in New York</p><a class="btn" href="#works">View Gallery</a></header>
+<section id="about"><h2>About</h2><p>Hello, I'm Sasha, an artist based in New York. I work with oil and acrylic painting and translate emotions into visual art.</p></section>
+<section id="works"><h2>Selected Works</h2><div class="gallery">
+<div class="artwork" onclick="openP('art1.jpg','Fallen Angel','A fallen angel stands suspended between divinity and collapse.')"><img src="art1.jpg" alt=""><p>Fallen Angel</p></div>
+<div class="artwork" onclick="openP('art2.jpg','Revelation','Inspired by Revelation 10.')"><img src="art2.jpg" alt=""><p>Revelation</p></div>
+<div class="artwork" onclick="openP('art3.jpg','Dreams','Fragile memories of childhood imagination.')"><img src="art3.jpg" alt=""><p>DREAMS</p></div>
+<div class="artwork" onclick="openP('art4.jpg','Lucky Horse','A symbol of luck and transformation.')"><img src="art4.jpg" alt=""><p>Lucky Horse</p></div>
+</div></section>
+<section id="contact"><h2>Contact</h2>
+<p>Email: <a href="mailto:alexamamoka@icloud.com">alexamamoka@icloud.com</a></p>
+<p>Instagram: <a target="_blank" href="https://instagram.com/brahmansasha">@brahmansasha</a></p>
+<p>TikTok: <a target="_blank" href="https://tiktok.com/@brahmansasha">@brahmansasha</a></p>
+<p>Etsy: <a target="_blank" href="https://sashabrahmanart.etsy.com">sashabrahmanart.etsy.com</a></p>
+</section>
+<div id="popup" onclick="closeP()"><div id="box" onclick="event.stopPropagation()"><img id="pi"><h3 id="pt"></h3><p id="pd"></p></div></div>
+<footer>© 2026 Sasha Brahman</footer>
+<script>
+function openP(i,t,d){popup.style.display='flex';pi.src=i;pt.innerText=t;pd.innerText=d}
+function closeP(){popup.style.display='none'}
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.15});
+document.querySelectorAll('section').forEach(s=>obs.observe(s));
+</script></body></html>
