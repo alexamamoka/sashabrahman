@@ -1,0 +1,1 @@
+document.querySelectorAll('section').forEach(s=>{s.animate([{opacity:0,transform:'translateY(30px)'},{opacity:1,transform:'translateY(0)'}],{duration:800,fill:'both'});});
